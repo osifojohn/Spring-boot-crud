@@ -1,6 +1,7 @@
 package com.osifojohncode.Springboot.crud.controller;
 
 import com.osifojohncode.Springboot.crud.entity.Department;
+import com.osifojohncode.Springboot.crud.error.DepartmentNotFoundException;
 import com.osifojohncode.Springboot.crud.service.DepartmentService;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
@@ -14,7 +15,7 @@ import java.util.List;
 public class DepartmentController {
     @Autowired
     private DepartmentService departmentService;
-    
+
     @PostMapping("/departments")
     public Department saveDepartment(@Valid @RequestBody Department department){
       return departmentService.saveDepartment(department);
@@ -24,7 +25,7 @@ public class DepartmentController {
         return departmentService.fetchDepartmentList();
     }
     @GetMapping("/departments/{id}")
-    public Department fetchDepartmentById(@PathVariable("id") Long departmentId){
+    public Department fetchDepartmentById(@PathVariable("id") Long departmentId) throws DepartmentNotFoundException {
         return departmentService.fetchDepartmentById(departmentId);
     }
     @DeleteMapping("/departments/{id}")
