@@ -11,7 +11,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 
 import java.lang.module.ResolutionException;
 
-@ControllerAdvice
+@ControllerAdvice 
 @ResponseStatus
 public class RestResposeEntityExceptionHandler
         extends ResponseEntityExceptionHandler {
