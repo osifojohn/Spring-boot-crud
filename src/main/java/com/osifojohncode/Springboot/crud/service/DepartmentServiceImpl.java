@@ -3,6 +3,7 @@ package com.osifojohncode.Springboot.crud.service;
 import com.osifojohncode.Springboot.crud.entity.Department;
 import com.osifojohncode.Springboot.crud.error.DepartmentNotFoundException;
 import com.osifojohncode.Springboot.crud.repository.DepartmentRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
